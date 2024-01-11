@@ -1,0 +1,32 @@
+#include <iostream>
+#include<vector>
+using namespace std;
+
+int getNum(vector<int>arr,int size)
+{
+  int N = size +1;
+  int totalSum = (N*(N+1))/2;
+   for(int i=0;i<size;i++)
+     {
+       totalSum=totalSum-arr[i];
+     }
+  return totalSum;
+}
+
+int main() {
+  int n;
+  cout<<"enter the value of the size of the array: ";
+  cin>>n;
+  
+  vector<int>arr(n);
+
+  cout<<"enter the value the element of the array: ";
+  for(int i=0;i<n;i++)
+    {
+      cin>>arr[i];
+    }
+   
+   cout<<"this is the missing number:"<< getNum(arr,n);
+
+  return 0;
+}
