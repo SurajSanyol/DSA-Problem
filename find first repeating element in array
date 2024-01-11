@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int getRepeatNum(vector<int> arr, int size) {
+  // int Num;
+  for (int i = 0; i < size; i++) {
+    for (int j = i + 1; j < size; j++) {
+      if (arr[i] == arr[j]) {
+        return i;
+      }
+    }
+  }
+  return -1;
+}
+int main() {
+  int n;
+  cout << "enter the value of the size of the array: ";
+  cin >> n;
+
+  vector<int> arr(n);
+
+  cout << "enter the value the element of the array: ";
+  for (int i = 0; i < n; i++) {
+    cin >> arr[i];
+  }
+
+  int index = getRepeatNum(arr, n);
+  if (index == -1) {
+    cout << "no repeating element found in the array";
+  } else {
+
+    cout << "this is the first repeating element in the array:" << arr[index];
+  }
+  return 0;
+}
