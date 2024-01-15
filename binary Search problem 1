@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int binarySearch(int arr[],int size ,int target)
+{
+    int start =0;
+    int end=size-1;
+    int mid=(start/2)+(end/2);
+   while(start<=end)
+    {
+      if(arr[mid]==target)
+      {
+        return mid;
+      }
+      else if(arr[mid]<target)
+      {
+      
+        start=mid+1;
+      }
+      else{
+          end=mid-1;
+      }
+
+      mid=(start+end)/2;
+    }
+
+   //not founs=d
+    return -1;
+}
+
+int main() {
+     
+   int size =7;
+   int target=16;
+   int arr[]={2,4,6,8,10,14,16};
+
+    int index=binarySearch(arr,size,target);
+    if(index==-1)
+    {
+      cout<<"target is not found";
+    }
+    else
+       cout<<"Target is found: "<<arr[index]<<" ";
+
+  return 0;
+}
